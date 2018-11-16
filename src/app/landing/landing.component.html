@@ -1,0 +1,335 @@
+
+<!--Topbar--->
+<div class="container-fluid topheaderblock">
+  <div class="row">
+    <div class="container topheaderblockwrapper">
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 topheaderblocklogo">
+        <div class="toplogo">
+          <a [routerLink]="['/']"><img alt="logo" src="../../assets/images/logo.png"></a>
+        </div>
+      </div>
+      <div class="videoimg_div">
+        <img src="https://i.ytimg.com/vi/MROXcmq-zfM/hqdefault.jpg">
+        <img class="video_play_icon" src="../../assets/images/video_play_icon.png" (click)="callvideo()">
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 topheadercaptionblock">
+        <h2>JOIN US FOR THE OFFICIAL COMPANY LAUNCH WEBINAR!</h2>
+        <h3>President and host Flii Stylz, CEO Beto Paredes and more will be presenting. <span>Monday, August 27th at 5:00PM Pacific.</span></h3>
+        <div class="clearfix"></div>
+        <a class="new_clicklink" href="https://registerforwebinar.audiodeadline.com" target="_blank">Click here!</a>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<div class="container-fluid topmenublock">
+  <div class="container-fluid topmenu">
+    <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <span class="responsivemenu">MENU</span>
+        <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" data-animations="fadeInDown" data-hover="dropdown" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="ssd lidiv0"><a class="dropdown-toggle" href="http://audiodeadline.com/#/" target="_blank"> home </a></li>
+          <li class="ssd lidiv1"><a class="dropdown-toggle" href="http://audiodeadline.com/#/aboutaudiodeadline" target="_blank"> About </a></li>
+          <li class="ssd lidiv2"><a class="dropdown-toggle" href="http://audiodeadline.com/#/community" target="_blank"> Community </a></li>
+          <li class="ssd lidiv3"><a class="dropdown-toggle" href="http://audiodeadline.com/#/signup" target="_blank"> RSVP for Tickets</a></li>
+          <li class="ssd lidiv4"><a class="dropdown-toggle" href="http://audiodeadline.com/#/affiliate" target="_blank"> Affiliate </a></li>
+          <li class="ssd lidiv5"><a class="dropdown-toggle" href="https://www.fliistylz.com/" target="_blank"> Host Flii Stylz </a></li>
+          <li class="ssd lidiv6"><a class="dropdown-toggle" href="http://audiodeadline.com/#/contactus" target="_blank"> Contact Us </a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<!--End Topbar--->
+
+
+
+<!--Landing Page Start--->
+<div class="container-fluid multi_bg_example_flii">
+  <div class="row">
+    <div class="container landingwrapper_flii">
+      <div class="logowrapper_flii">
+        <img src="../../assets/images/landing-logo.png">
+      </div>
+      <div class="landingformwrapper_flii">
+        <div class="landingformheader_flii">
+          <h1><!--Get Started-->JOIN US</h1>
+          <h3><!--Right Away!--> on this free webinar</h3>
+        </div>
+        <div class="landingforminnerwrapper_flii">
+          <div role="form" class="wpcf7" id="wpcf7-f204-p202-o1" lang="en-US" dir="ltr">
+            <div class="screen-reader-response"></div>
+            <form class="wpcf7-form" novalidate [formGroup] = "dataForm" (ngSubmit)="dosubmit(dataForm.value)">
+              <p>
+                <label>
+                              <span class="">
+                                  <input type="text" name="first-name" value="" size="40" class="form-control"  placeholder="First Name" [formControl]="dataForm.controls['firstname']">
+                                <span class="has-error" *ngIf ="dataForm.controls['firstname'].touched && !dataForm.controls['firstname'].valid" style="color: red">Invalid First Name!</span>
+                              </span>
+                </label>
+                <br>
+                <label>
+                              <span class="last-name"><input type="text" name="last-name" value="" size="40" class="form-control" placeholder="Last Name" [formControl]="dataForm.controls['lastname']">
+                                <span class="has-error" *ngIf ="dataForm.controls['lastname'].touched && !dataForm.controls['lastname'].valid" style="color: red">Invalid Last Name!</span>
+                              </span>
+                </label>
+                <br>
+                <label>
+                              <span class="your-email">
+                                  <input type="email" name="your-email" value="" size="40" class="form-control" placeholder="Email" [formControl]="dataForm.controls['email']">
+                                <span class="has-error" *ngIf ="dataForm.controls['email'].touched && getemail('blank')==true" style="color: red">Emailid is Required !</span>
+        <span class="has-error" *ngIf ="dataForm.controls['email'].touched && getemail('invalid')==true" style="color: red">Invalid Emailid!</span>
+                              </span>
+                </label>
+                <br>
+                <label>
+                              <span class="your-phone">
+                                  <input type="tel" name="your-phone" value="" size="40" class="form-control" placeholder="Telephone number" [formControl]="dataForm.controls['phoneno']"></span>
+                  <span class="has-error" *ngIf ="dataForm.controls['phoneno'].touched && !dataForm.controls['phoneno'].valid" style="color: red">Invalid Phone Number!</span>
+                </label><br><br>
+                <span class="your-country">
+                              <span class="">
+                                  <span class="first">
+                                      <label><input type="radio" name="your-country[]" value="Inside the USA" [formControl]="dataForm.controls['living']"><span class="">Inside the USA</span></label>
+                                  </span>
+                                  <span class="last">
+                                      <label><input type="radio" name="your-country[]" value="Outside the USA" [formControl]="dataForm.controls['living']"><span class="">Outside the USA</span></label>
+                                  </span>
+                              </span>
+                  <span class="has-error" *ngIf ="dataForm.controls['living'].touched && !dataForm.controls['living'].valid" style="color: red">Invalid Living!</span>
+                          </span>
+              </p>
+              <h4>Check all that apply</h4>
+              <p>
+                          <span class="your-profession">
+                              <span class="">
+                                  <span class="first">
+                                      <label><input type="checkbox" name="your-profession[]" value="Influencer" [formControl]="dataForm.controls['influencer']"><span class="">Influencer</span></label>
+                                  </span>
+                                  <span class="">
+                                      <label><input type="checkbox" name="your-profession[]" value="Promoter" [formControl]="dataForm.controls['promoter']"><span class="">Promoter</span></label>
+                                  </span>
+                                  <span class="">
+                                      <label><input type="checkbox" name="your-profession[]" value="Musician" [formControl]="dataForm.controls['musician']"><span class="">Musician</span></label>
+                                  </span>
+                                  <span class=" last">
+                                      <label><input type="checkbox" name="your-profession[]" value="Other" [formControl]="dataForm.controls['other']"><span class="">Other</span></label>
+                                  </span>
+                              </span>
+                          </span>
+              </p>
+              <p><input type="submit" value="SIGNUP NOW!" class="btnbuyticket_flii7"></p>
+            </form>
+          </div>
+        </div>
+        <div class="landingformfooter_flii">
+        </div>
+      </div>
+      <div class="img1wrapper_flii">
+        <img src="../../assets/images/landingimg1new.png" class="landingimg1new">
+        <img src="../../assets/images/landingimg1newsml.png" class="landingimg1newsml">
+      </div>
+      <div class="txt1wrapper_flii">
+        <h2>Social Influencers - Music Promoters - Musicians!</h2>
+        <h1>This is going to</h1>
+        <h1>be the next biggest</h1>
+        <h1>thing in MUSIC!</h1>
+        <h3><!--MAKE MONEY PROMOTING THE HOTTEST THING TO HIT THE MUSIC INDUSTRY SINCE I-TUNES! <span>AUGUST 27TH AT 5PM</span> PACIFIC TIME JOIN US FOR OUR LIVE COMPANY LAUNCH WEBINAR.-->MAKE MONEY PROMOTING THE HOTTEST THING TO HIT THE MUSIC INDUSTRY SINCE I-TUNES! AUGUST 27TH AT 5PM PACIFIC TIME JOIN US FOR OUR FREE LIVE COMPANY LAUNCH WEBINAR</h3>
+      </div>
+
+      <div class="txt3wrapper_flii">
+        <div class="txt3wrapperheader_flii">
+          <h1><!--We are selling steaming tickets to this incredible online event for and you can get paid 10% of every ticket sold through your reach!-->AUDIO DEADLINE WILL BE THE LARGEST COMMUNITY AND ONLINE STREAMING SHOW IN THE INDUSTRY!  COME LEARN HOW TO JOIN AND INVITE OTHERS. <span><!--Not only this but you will be paid on ALL sales made for the lifetime of all their Audio Deadline purchases!-->We have free services to musicians, fans and a full social network coming! If those you invite buy a streaming ticket you get paid!</span><img src="../../assets/images/arrowsigninleft.png" class="arrowsigninleft"></h1>
+
+          <div class="txt3wrapperheader_video_flii">
+            <div class="video-container">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/MROXcmq-zfM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="videorighttxtdiv">
+            <h5>THAT IS NOT ALL! We are also on the first phase roll out of the biggest online community of musicians, dancers, models, fans and entertainment industry artists ever offered!  WE ARE FOR THE ARTISTS!</h5>
+            <h4>GET SIGNED UP RIGHT NOW TO COME <br>TO THE COMPANY LAUNCH <br>ONLINE WEBINAR <br><span>AUGUST 27TH.</span> IT’S RIGHT AROUND <br>THE CORNER!</h4>
+          </div>
+          <div class="img3wrapper_flii">
+            <img src="../../assets/images/landingtxt3img1_flii.png" class="landingtxt3img1_flii">
+            <img src="../../assets/images/landingtxt3img1sml_flii.png" class="landingtxt3img1sml_flii">
+          </div>
+        </div>
+      </div>
+      <div class="txt4wrapper_flii">
+        <div class="txt4wrapperheader_flii">
+          <h1>Why is this the hottest<br>ticket around?</h1>
+          <div class="img4wrapper1_flii">
+            <img src="../../assets/images/landingtxt4img2_flii.png">
+          </div>
+          <h5>
+            Our celebrity host <span>Flii Stylz</span> has worked with Usher, Chris Brown, Nicki Minaj, Tyrese, TLC, Ariana Grande, J-Lo, Ludacris and the list just goes on and on! Every A-List Artist that comes onto the <span>Audio Deadline show will be WELL KNOWN</span> and selling streaming tickets will be EASY!
+            <div class="btnbuyticketwrapper_flii">
+              <a class="btnbuyticket_flii">Sign up Right Away!</a>
+            </div>
+          </h5>
+
+        </div>
+      </div>
+
+      <div class="txt6wrapper_flii">
+        <div class="landingcopyright_flii">©2018 COPYRIGHT by Audio Deadline</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--Landing Page End--->
+
+
+<!---Footer---->
+
+<div class="container-fluid footer_area">
+  <div class="row"><div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 pull-left copyrightdiv">
+    <p>©2017 COPYRIGHT by Audio Deadline</p>
+  </div>
+    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 pull-right footerrightdiv">
+      <div class="row">
+        <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+          <ul class="list-inline socialmediaftlinks">
+            <li class="list-inline-item">
+              <span>Follow us on</span>
+              <a href="https://www.facebook.com/audiodeadline/" target="_blank">
+                <img src="../../assets/images/ft-fbicon.png">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 ">
+          <div class="footernav">
+            <ul>
+              <li class="ssd lidiv0">
+                <a class="dropdown-toggle"  href="http://audiodeadline.com/#/" target="_blank"> home </a>
+              </li>
+              <li class="ssd lidiv1">
+                <a class="dropdown-toggle" target="_blank" href="http://audiodeadline.com/#/aboutaudiodeadline"> About Audio Deadline </a>
+              </li>
+              <li class="ssd lidiv2">
+                <a class="dropdown-toggle" target="_blank" href="http://audiodeadline.com/#/community"> Community </a>
+              </li>
+              <li class="ssd lidiv3">
+                <a class="dropdown-toggle" target="_blank" href="http://audiodeadline.com/#/affiliate"> Affiliate </a>
+              </li>
+              <li class="ssd lidiv4">
+                <a class="dropdown-toggle" target="_blank" href="http://audiodeadline.com/#/contactus"> Contact Us </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!---End Footer---->
+
+
+
+
+<!-------------Car purchase popup------------------->
+
+<!--<div id="popthankyou" class="modal fade" role="dialog">
+
+  <div class="modal-dialog">
+
+    &lt;!&ndash; Modal content&ndash;&gt;
+
+    <div class="modal-content">
+
+      <div class="modal-body text-center signupeamilbody">
+
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2>Thank You!</h2>
+        <p><span>We'll respond to your request shortly...</span></p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>-->
+
+
+
+<div *ngIf="popthankyouhomemodal" class=" sign_modal pateintquestioniremodal modal fade" bsModal #staticModal="bs-modal" [config]="{ keyboard: false, backdrop: 'static',  show: true }"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+
+    <div class="modal-content">
+
+      <div class="modal-body text-center signupeamilbody">
+
+        <button type="button" class="close" data-dismiss="modal" (click)="onHidden()">&times;</button>
+        <h2>Thank You!</h2>
+        <p><span>You are successfully registered to our Audio Deadline Music Community and Show Opening Day - THE NEXT BIGGEST THING IN MUSIC - OFFICIAL COMPANY LAUNCH.</span></p>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="videomemodal" class=" sign_modal pateintquestioniremodal modal fade" bsModal #staticModal="bs-modal" [config]="{ keyboard: false, backdrop: 'static',  show: true }"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+
+    <div class="modal-content ">
+
+      <div class="modal-body text-center videomodal ">
+
+        <button type="button" class="closedideo" data-dismiss="modal" (click)="onHidden()" style="font-size: 0px;">&times;</button>
+          <div class="videoiframe-container">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/MROXcmq-zfM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<!--
+<div id="popthankyouhome" class="modal fade" role="dialog" *ngIf="popthankyouhomemodal">
+
+  <div class="modal-dialog">
+
+    &lt;!&ndash; Modal content&ndash;&gt;
+
+    <div class="modal-content">
+
+      <div class="modal-body text-center signupeamilbody">
+
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2>Thank You!</h2>
+        <p><span>We'll respond to your request shortly...</span></p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>-->

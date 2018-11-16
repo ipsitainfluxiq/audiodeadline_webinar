@@ -1,0 +1,56 @@
+<h2>Sign-Up</h2>
+<div style="text-align: center">
+  <form role="form" novalidate [formGroup] = "dataForm" (ngSubmit)="dosubmit(dataForm.value)">
+
+    <div class="row row-eq-height" style="padding: 20px;">
+      <div class="col-lg-6">
+        <label>First Name</label>
+        <input type="text" [formControl]="dataForm.controls['firstname']">
+        <br/><span class="has-error" *ngIf ="dataForm.controls['firstname'].touched && !dataForm.controls['firstname'].valid" style="color: red">Invalid First Name!</span>
+      </div>
+      <div class="col-lg-6">
+        <label>Last Name</label>
+        <input type="text" [formControl]="dataForm.controls['lastname']" >
+        <br/><span class="has-error" *ngIf ="dataForm.controls['lastname'].touched && !dataForm.controls['lastname'].valid" style="color: red">Invalid Last Name!</span>
+      </div>
+    </div>
+
+    <!-- <div style="background-color: black; height: 1px;width: auto;"></div>-->
+
+    <div class="row row-eq-height"  style="padding: 20px;">
+      <div class="col-lg-6">
+        <label>Email</label>
+        <input type="text" [formControl]="dataForm.controls['email']">
+        <br/><span class="has-error" *ngIf ="dataForm.controls['email'].touched && getemail('blank')==true" style="color: red">Emailid is Required !</span>
+        <span class="has-error" *ngIf ="dataForm.controls['email'].touched && getemail('invalid')==true" style="color: red">Invalid Emailid!</span>
+      </div>
+      <div class="col-lg-6">
+        <label>Phone Number</label>
+        <input type="text" [formControl]="dataForm.controls['phoneno']">
+        <br/><span class="has-error" *ngIf ="dataForm.controls['phoneno'].touched && !dataForm.controls['phoneno'].valid" style="color: red">Invalid Phone Number!</span>
+      </div>
+    </div>
+
+    <!--<div style="background-color: black; height: 1px;width: auto;"></div>-->
+    <div class="row row-eq-height"  style="padding: 20px;">
+      <div class="col-lg-6">
+        <label>Living</label>
+        <input type="radio" name="inout" [formControl]="dataForm.controls['living']" value="Inside the USA">Inside the USA
+        <input type="radio"  name="inout" [formControl]="dataForm.controls['living']"  value="Outside the USA">Outside the USA
+        <br/><span class="has-error" *ngIf ="dataForm.controls['living'].touched && !dataForm.controls['living'].valid" style="color: red">Invalid Living!</span>
+      </div>
+      <div class="col-lg-6">
+        <label>Select Work Type: </label>
+        <select  [formControl]="dataForm.controls['worktype']">
+          <option disabled value="">Select anyone</option>
+          <option value="Social Influencer">Social Influencer</option>
+          <option value="Promoter">Promoter</option>
+          <option value="Musician">Musician</option>
+          <option value="Other">Other</option>
+        </select>
+        <br/><span class="has-error" *ngIf ="dataForm.controls['worktype'].touched && !dataForm.controls['worktype'].valid" style="color: red">Invalid Work Type!</span>
+      </div>
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+</div>

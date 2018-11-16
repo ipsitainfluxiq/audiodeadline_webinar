@@ -1,14 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
-  <title>Demo</title>
+  <title>Audiodeadline Webinar</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/ionicons.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/landingpagecssflii.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/media.css" />
 </head>
 <body>
-  <app-root></app-root>
+<app-root>
+  <div class="loaderdiv" style="width: 100vw; height: 100vh; display: table-cell; text-align: center; vertical-align: middle;">
+    <div class="logowrapper">
+      <img src="../../assets/images/logo.png" style=" display: block; margin: 0 auto; width: 250px; margin-bottom: 25px;">
+    </div>
+    <div class="loader"></div>
+  </div>
+</app-root>
 </body>
+<script type="text/javascript" src="assets/js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="assets/js/common.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 </html>
+
+<!--
+<script>
+    $( window ).load(function() {
+        if (location.protocol != 'https:')
+        {
+            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+        }
+    });
+</script>-->
